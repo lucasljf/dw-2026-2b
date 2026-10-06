@@ -13,7 +13,7 @@ Possui a documentação do banco. Contém relacionamentos `n:n`.
 - Diully Silva de Carvalho
 - Gabryel Vieira Passos
 - Giulia Luiza Rufino Moraes Vieira
-- Guilherme Antonio Oliveira Silva
+- Guilherme Antonio Oliveira Silva [@bentarado](https://github.com/bentarado)
 - Isabella Moreira Marçal
 - Jair Souza Viana
 - João Pedro Silva Cruz
