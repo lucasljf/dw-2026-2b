@@ -27,7 +27,7 @@ Possui a documentação do banco. Contém relacionamentos `n:n`.
 - Matheus de Oliveira Paiva
 - Monique Almeida Alves
 - Pedro Felipe Rosa dos Santos
-- Pedro Henrique Pereira de Lima Cordeiro
+- Pedro Henrique Pereira de Lima Cordeiro [Hxzpedro](https://github.com/Hxzpedro)
 - Priscylla Souza da Silva
 - Rafaella Batista dos Santos
 - Sarah Gabriela Borba
