@@ -21,7 +21,7 @@ Possui a documentação do banco. Contém relacionamentos `n:n`.
 - Lara Rayane Cruz Ferreira
 - Luana de Morais Silva
 - Luís Gustavo Arriel de Melo
-- Luiz Eduardo Bezerra de Jesus [@luizbezerra-arch18!] (https://github.com/luizbezerra-arch18)
+- Luiz Eduardo Bezerra de Jesus [@luizbezerra-arch18!](https://github.com/luizbezerra-arch18)
 - Maria Clara de Sousa Rosa
 - Maria Eduarda Cardoso do Nascimento
 - Matheus de Oliveira Paiva
