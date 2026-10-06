@@ -7,7 +7,7 @@ Possui a documentação do banco. Contém relacionamentos `n:n`.
 ## Equipe de Desenvolvimento
 
 - Lucas José de Faria [@lucasljf](https://github.com/lucasljf)
-- Anna Beatriz de Sousa Silva
+- Anna Beatriz de Sousa Silva [@AnnnaBeat](https://github.com/AnnnaBeat)
 - Bianca Ribeiro Pires
 - Caio Vinícius Rolins de Oliveira
 - Diully Silva de Carvalho
