@@ -17,7 +17,7 @@ Possui a documentação do banco. Contém relacionamentos `n:n`.
 - Isabella Moreira Marçal
 - Jair Souza Viana
 - João Pedro Silva Cruz
-- Kauan Fillipe da Silva Rodrigues
+- Kauan Fillipe da Silva Rodrigues [@Lipezin-16](https://github.com/Lipezin-16)
 - Lara Rayane Cruz Ferreira
 - Luana de Morais Silva
 - Luís Gustavo Arriel de Melo [@luisarriel](https://github.com/luisarriel)
