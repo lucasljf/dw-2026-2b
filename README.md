@@ -15,7 +15,7 @@ Possui a documentação do banco. Contém relacionamentos `n:n`.
 - Giulia Luiza Rufino Moraes Vieira
 - Guilherme Antonio Oliveira Silva
 - Isabella Moreira Marçal
-- Jair Souza Viana
+- Jair Souza Viana [@ASjair] (https://githb.com/ASjair)
 - João Pedro Silva Cruz
 - Kauan Fillipe da Silva Rodrigues
 - Lara Rayane Cruz Ferreira
