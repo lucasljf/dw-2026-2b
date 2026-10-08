@@ -25,3 +25,8 @@
     $stmt = mysqli_prepare(conexao, $sql);
     mysqli_stmt_bind_param($stmt, "ii", $comentario_id, $usuario);
 
+    //volta para a lista de comentarios
+    header ("location: listar_comentarios.php");
+    exit;
+
+    ?>
