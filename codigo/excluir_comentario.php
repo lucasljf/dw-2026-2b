@@ -15,3 +15,8 @@
     //pegao id do comentario
     $comentario_id = $_GET['idcomentario']; ?? null;
     
+    if (!$idcomentario) {
+        header("location: listar_comentarios.php");
+        exit();
+    }
+    
