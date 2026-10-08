@@ -1,3 +1,6 @@
+<?php
+require_once "grupo_2verifica_sesao.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,21 +94,20 @@
         } 
         else {
             //formulário preenchido
-            $id = $_GET['id'];
-
-            $sql = "SELECT * FROM curso WHERE idcurso = $id";
-
-            require_once "../conexao.php";
+            $id = $_SESSION['id'];
+            $sql = "SELECT * FROM comentario WHERE idcomentario = $id";
+            require_once "conexao.php";
             $resultado = mysqli_query($conexao, $sql);
 
             $linha = mysqli_fetch_array($resultado);
-            $nome = $linha['nome'];
-            $area = $linha['area'];
-            $carga_horaria = $linha['carga_horaria'];
+            $idcomentario = $linha['idcomentario'];
+            $idusuario = $linha['idusuario'];
+            $idpostagem = $linha['idpostagem'];
+            $texto = $linha['texto'];
         }
 
         ?>
-        <form action="salvar_comentar.php" method="post">
+        <form action="salvar_comentarios.php" method="post">
             <br>
             <input type="text" name="comentario">
             <input type="submit" value="Comentar">
