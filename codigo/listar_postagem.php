@@ -81,6 +81,30 @@
                 }
             }
         ?>
+        <?php
+        if (!isset($_GET['id'])) {
+            //formulário em branco
+            $id = 0;
+            $nome = "";
+            $area = "";
+            $carga_horaria = "";
+        } 
+        else {
+            //formulário preenchido
+            $id = $_GET['id'];
+
+            $sql = "SELECT * FROM curso WHERE idcurso = $id";
+
+            require_once "../conexao.php";
+            $resultado = mysqli_query($conexao, $sql);
+
+            $linha = mysqli_fetch_array($resultado);
+            $nome = $linha['nome'];
+            $area = $linha['area'];
+            $carga_horaria = $linha['carga_horaria'];
+        }
+
+        ?>
         <form action="salvar_comentar.php" method="post">
             <br>
             <input type="text" name="comentario">
