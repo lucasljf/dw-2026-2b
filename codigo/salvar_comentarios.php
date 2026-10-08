@@ -1,14 +1,15 @@
 <?php
-require_once "../conexao.php";
+require_once "conexao.php";
+require_once "grupo_2verifica_sesao.php";
 
-$idcurso = $_GET['idusuario'];
+$idusuario = $_SESSION['idusuario'];
 $idpostagem = $_GET['idpostagem'];
-$texto = $_GET['texto'];
+$texto = $_GET['comentario'];
 
-$sql = "INSERT INTO turma (idusuario, idpostagem, texto) VALUES ($idpostagem, $idpostagem, '$texto')";
+$sql = "INSERT INTO comentario (idusuario, idpostagem, texto) VALUES ($idusuario, $idpostagem, '$texto')";
 
 mysqli_query($conexao, $sql);
 
-header("Location: ../sucesso.html");
+header("Location: listar_postagem.php");
 
 ?>
