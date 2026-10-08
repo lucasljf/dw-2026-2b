@@ -20,3 +20,8 @@
         exit();
     }
     
+    //excluir somente se o comentario pertencer ao usuario logado
+    $sql = "DELETE FROM comentarios WHERE idcomentario = ? AND usuario_id = ?";
+    $stmt = mysqli_prepare(conexao, $sql);
+    mysqli_stmt_bind_param($stmt, "ii", $comentario_id, $usuario);
+
