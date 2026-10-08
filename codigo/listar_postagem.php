@@ -81,9 +81,11 @@
                 }
             }
         ?>
+        <form action="salvar_comentar.php" method="post">
             <br>
-            <input type="text">
+            <input type="text" name="comentario">
             <input type="submit" value="Comentar">
+        </form>
         <?php
             echo "</div>";
 

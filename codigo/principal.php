@@ -7,6 +7,6 @@
 </head>
 <body>
     <a href="form_postagem.php">Fazer nova postagem</a>
-    <a href="listar_postagens.php">Ver postagens</a>
+    <a href="listar_postagem.php">Ver postagens</a>
 </body>
 </html>
