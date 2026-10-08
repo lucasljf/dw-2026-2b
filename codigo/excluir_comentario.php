@@ -8,3 +8,10 @@
         header("Location: login.php");
         exit();
     }  
+
+    // pega o id do usuario logado
+    $usuario = $_SESSION['usuario_id'];
+    
+    //pegao id do comentario
+    $comentario_id = $_GET['idcomentario']; ?? null;
+    
