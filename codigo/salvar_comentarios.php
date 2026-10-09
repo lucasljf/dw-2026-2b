@@ -2,14 +2,16 @@
 require_once "conexao.php";
 require_once "grupo_2verifica_sesao.php";
 
-$idusuario = $_SESSION['idusuario'];
-$idpostagem = $_GET['idpostagem'];
-$texto = $_GET['comentario'];
+$idusuario  = $_SESSION['idusuario'];
 
-$sql = "INSERT INTO comentario (idusuario, idpostagem, texto) VALUES ($idusuario, $idpostagem, '$texto')";
+// Troque $_GET por $_POST para bater com o method="post" do HTML
+$idpostagem = $_POST['idpostagem'];
+$texto = $_POST['comentario'];
 
-mysqli_query($conexao, $sql);
+if (!empty($texto) && $idpostagem > 0) {
+    $sql = "INSERT INTO comentario (idusuario, idpostagem, texto) VALUES ($idusuario, $idpostagem, '$texto')";
+    mysqli_query($conexao, $sql);
+}
 
 header("Location: listar_postagem.php");
-
 ?>

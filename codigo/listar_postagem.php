@@ -109,7 +109,9 @@ require_once "grupo_2verifica_sesao.php";
         ?>
         <form action="salvar_comentarios.php" method="post">
             <br>
-            <input type="text" name="comentario">
+    <!-- Adicione esta linha abaixo -->
+            <input type="hidden" name="idpostagem" value="<?php echo $idpostagem; ?>">
+            <input type="text" name="comentario" required>
             <input type="submit" value="Comentar">
         </form>
         <?php

@@ -4,24 +4,17 @@
    session_start();
 
 // Verifica se o usuário está logado
-    if (!isset($_SESSION['usuario_id'])) {
+    if (!isset($_SESSION['idusuario'])) {
         header("Location: login.php");
         exit();
     }  
 
     // pega o id do usuario logado
-    $usuario = $_SESSION['usuario_id'];
+    $usuario = $_SESSION['idusuario'];
     
     //pegao id do comentario
-    $comentario_id = $_GET['idcomentario']; null;
+    $comentario_id = $_GET['idcomentario'];
     
-    if (!$idcomentario) {
-        header("location: listar_comentarios.php");
-        exit();
+    if (!$comentario_id) {
+        header("location: listar_postagem.php");
     }
-    
-    //volta para a lista de comentarios
-    header ("location: listar_comentarios.php");
-    exit;
-
-    ?>
