@@ -2,12 +2,12 @@
 require_once "grupo_2verifica_sesao.php";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>feed</title>
     <style>
         div {
             border-style: solid;
@@ -22,6 +22,27 @@ require_once "grupo_2verifica_sesao.php";
             border-color: red;
             padding: 10px;
             margin: 10px;
+        }
+
+        /* Estilização do Accordion nativo */
+        details.accordion-item {
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        summary.accordion-header {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 5px;
+            user-select: none;
+        }
+
+        .accordion-body {
+            padding: 10px;
+            border-top: 1px solid #eee;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -40,84 +61,68 @@ require_once "grupo_2verifica_sesao.php";
         $postagens = mysqli_query($conexao, $sql);
 
         while ($postagem = mysqli_fetch_array($postagens)) {
-            $idpostagem = $postagem['idpostagem'];
-            $texto = $postagem['texto'];
-            $data_hora = $postagem['data_hora'];
-            $idusuario = $postagem['idusuario'];
+            $idpostagem   = $postagem['idpostagem'];
+            $texto        = $postagem['texto'];
+            $data_hora    = $postagem['data_hora'];
+            $idusuario    = $postagem['idusuario'];
             $nome_usuario = $postagem['nome'];
-            $username = $postagem['username'];
+            $username     = $postagem['username'];
             $foto_usuario = $postagem['foto'];
 
             echo "<div class='postagem'>";
-            echo "<img src='fotos_usuario/$foto_usuario'>";
-            echo "$nome_usuario ($username)";
-            echo "<br>";
-            echo $idpostagem;
-            echo "<br>";
-            echo $texto;
-            echo "<br>";
-            echo $data_hora;
+            echo "<img src='fotos_usuario/$foto_usuario' width='40'>";
+            echo " <strong>$nome_usuario</strong> ($username)";
+            echo "<br>ID Post: " . $idpostagem;
+            echo "<br>" . $texto;
+            echo "<br><small>" . $data_hora . "</small>";
 
-            echo "<div>";
+            // Consulta a quantidade de comentários
             $sql2 = "SELECT comentario.idcomentario, comentario.idusuario, comentario.texto, usuario.username, usuario.nome, usuario.foto
                 FROM comentario, usuario
                 WHERE idpostagem = $idpostagem
                 AND comentario.idusuario = usuario.idusuario ORDER BY comentario.idcomentario;";
             $comentarios = mysqli_query($conexao, $sql2);
             $quantidade_comentario = mysqli_num_rows($comentarios);
-            if ($quantidade_comentario == 0) {
-                echo "Seja o primeiro a comentar...";
-            } else {
-                while ($comentario = mysqli_fetch_array($comentarios)) {
-                    $idcomentario = $comentario['idcomentario'];
-                    $comentario_idusuario = $comentario['idusuario'];
-                    $comentario_texto = $comentario['texto'];
-                    $comentario_nome_usuario = $comentario['nome'];
-                    $comentario_username_usuario = $comentario['username'];
-                    $comentario_foto_usuario = $comentario['foto'];
+            ?>
 
-                    echo "<br>";
-                    echo $idcomentario;
-                    echo "<img src='fotos_usuario/$comentario_foto_usuario'>";
-                    echo "$comentario_nome_usuario ($comentario_username_usuario)";
-                    echo $comentario_texto;
-                }
-            }
-        ?>
+            <!-- Accordion Nativo para Comentários -->
+            <details class="accordion-item" name="accordionComentarios">
+                <summary class="accordion-header">
+                    Comentários (<?php echo $quantidade_comentario; ?>)
+                </summary>
+
+                <div class="accordion-body">
+                    <?php
+                    if ($quantidade_comentario == 0) {
+                        echo "<p>Seja o primeiro a comentar...</p>";
+                    } else {
+                        while ($comentario = mysqli_fetch_array($comentarios)) {
+                            $idcomentario                 = $comentario['idcomentario'];
+                            $comentario_texto            = $comentario['texto'];
+                            $comentario_nome_usuario     = $comentario['nome'];
+                            $comentario_username_usuario = $comentario['username'];
+                            $comentario_foto_usuario     = $comentario['foto'];
+
+                            echo "<div style='margin-bottom: 8px;'>";
+                            echo "<img src='fotos_usuario/$comentario_foto_usuario' width='25'> ";
+                            echo "<strong>$comentario_nome_usuario</strong> ($comentario_username_usuario): ";
+                            echo $comentario_texto;
+                            echo "</div>";
+                        }
+                    }
+                    ?>
+
+                    <!-- Formulário para envio de comentário -->
+                    <form action="salvar_comentarios.php" method="post" style="margin-top: 10px;">
+                        <input type="hidden" name="idpostagem" value="<?php echo $idpostagem; ?>">
+                        <input type="text" name="comentario" placeholder="Escreva um comentário..." required>
+                        <input type="submit" value="Comentar">
+                    </form>
+                </div>
+            </details>
+
         <?php
-        if (!isset($_GET['id'])) {
-            //formulário em branco
-            $id = 0;
-            $nome = "";
-            $area = "";
-            $carga_horaria = "";
-        } 
-        else {
-            //formulário preenchido
-            $id = $_SESSION['id'];
-            $sql = "SELECT * FROM comentario WHERE idcomentario = $id";
-            require_once "conexao.php";
-            $resultado = mysqli_query($conexao, $sql);
-
-            $linha = mysqli_fetch_array($resultado);
-            $idcomentario = $linha['idcomentario'];
-            $idusuario = $linha['idusuario'];
-            $idpostagem = $linha['idpostagem'];
-            $texto = $linha['texto'];
-        }
-
-        ?>
-        <form action="salvar_comentarios.php" method="post">
-            <br>
-    <!-- Adicione esta linha abaixo -->
-            <input type="hidden" name="idpostagem" value="<?php echo $idpostagem; ?>">
-            <input type="text" name="comentario" required>
-            <input type="submit" value="Comentar">
-        </form>
-        <?php
-            echo "</div>";
-
-            echo "</div>";
+            echo "</div>"; // Fecha div.postagem
         }
         ?>
     </div>
