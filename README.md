@@ -31,7 +31,7 @@ Possui a documentação do banco. Contém relacionamentos `n:n`.
 - Priscylla Souza da Silva [@Priscylla08](https://github.com/Priscylla08/dw-2026-2b)
 - Rafaella Batista dos Santos
 - Sarah Gabriela Borba
-- Tales Tavares Pidde
+- Tales Tavares Pidde [@talestavarpidde](https://github.com/talestavarpidde)
 - Thaywan Pietro Silva Carvalho
 - Victor Gabriel da Silva Cunha
 - Yago Pereira Santiago [@yagopereira16](https://github.com/yagopereira16)
