@@ -1,0 +1,35 @@
+        div {
+            border-style: solid;
+        }
+
+        .postagens {
+            border-color: blue;
+            padding: 10px;
+        }
+
+        .postagem {
+            border-color: red;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* Estilização do Accordion nativo */
+        details.accordion-item {
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        summary.accordion-header {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 5px;
+            user-select: none;
+        }
+
+        .accordion-body {
+            padding: 10px;
+            border-top: 1px solid #eee;
+            margin-top: 5px;
+        }

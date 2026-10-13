@@ -8,43 +8,7 @@ require_once "grupo_2verifica_sesao.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>feed</title>
-    <style>
-        div {
-            border-style: solid;
-        }
-
-        .postagens {
-            border-color: blue;
-            padding: 10px;
-        }
-
-        .postagem {
-            border-color: red;
-            padding: 10px;
-            margin: 10px;
-        }
-
-        /* Estilização do Accordion nativo */
-        details.accordion-item {
-            border: 1px solid #ccc;
-            margin-top: 10px;
-            padding: 5px;
-            border-radius: 4px;
-        }
-
-        summary.accordion-header {
-            cursor: pointer;
-            font-weight: bold;
-            padding: 5px;
-            user-select: none;
-        }
-
-        .accordion-body {
-            padding: 10px;
-            border-top: 1px solid #eee;
-            margin-top: 5px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -74,7 +38,7 @@ require_once "grupo_2verifica_sesao.php";
             echo " <strong>$nome_usuario</strong> ($username)";
             echo "<br>ID Post: " . $idpostagem;
             echo "<br>" . $texto;
-            echo "<br><small>" . $data_hora . "</small>";
+            echo "<br>$data_hora";
 
             // Consulta a quantidade de comentários
             $sql2 = "SELECT comentario.idcomentario, comentario.idusuario, comentario.texto, usuario.username, usuario.nome, usuario.foto
@@ -97,13 +61,13 @@ require_once "grupo_2verifica_sesao.php";
                         echo "<p>Seja o primeiro a comentar...</p>";
                     } else {
                         while ($comentario = mysqli_fetch_array($comentarios)) {
-                            $idcomentario                 = $comentario['idcomentario'];
-                            $comentario_texto            = $comentario['texto'];
-                            $comentario_nome_usuario     = $comentario['nome'];
+                            $idcomentario = $comentario['idcomentario'];
+                            $comentario_texto = $comentario['texto'];
+                            $comentario_nome_usuario = $comentario['nome'];
                             $comentario_username_usuario = $comentario['username'];
-                            $comentario_foto_usuario     = $comentario['foto'];
+                            $comentario_foto_usuario = $comentario['foto'];
 
-                            echo "<div style='margin-bottom: 8px;'>";
+                            echo "<div>";
                             echo "<img src='fotos_usuario/$comentario_foto_usuario' width='25'> ";
                             echo "<strong>$comentario_nome_usuario</strong> ($comentario_username_usuario): ";
                             echo $comentario_texto;
@@ -112,10 +76,9 @@ require_once "grupo_2verifica_sesao.php";
                     }
                     ?>
 
-                    <!-- Formulário para envio de comentário -->
-                    <form action="salvar_comentarios.php" method="post" style="margin-top: 10px;">
+                    <form action="salvar_comentarios.php" method="post">
                         <input type="hidden" name="idpostagem" value="<?php echo $idpostagem; ?>">
-                        <input type="text" name="comentario" placeholder="Escreva um comentário..." required>
+                        <input type="text" name="comentario">
                         <input type="submit" value="Comentar">
                     </form>
                 </div>
