@@ -12,7 +12,7 @@ require_once "grupo_2verifica_sesao.php";
 </head>
 
 <body>
-    <h2>Lista de postagem</h2>
+    <h2>Feed</h2>
 
     <div class="postagens">
         <?php
@@ -71,6 +71,7 @@ require_once "grupo_2verifica_sesao.php";
                             echo "<img src='fotos_usuario/$comentario_foto_usuario' width='25'> ";
                             echo "<strong>$comentario_nome_usuario</strong> ($comentario_username_usuario): ";
                             echo $comentario_texto;
+                            echo "<a href='excluir_comentario.php?idcomentario=$idcomentario&idpostagem=$idpostagem&idusuario=$idusuario'>Excluir</a>";
                             echo "</div>";
                         }
                     }

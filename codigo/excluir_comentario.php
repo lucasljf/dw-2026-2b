@@ -1,20 +1,12 @@
 <?php
     require_once "conexao.php";
+    require_once "grupo_2verifica_sesao.php";
+    $idcomentario = $_GET['idcomentario'];
+    $idusuario = $_SESSION['idusuario'];
+    $idpostagem = $_GET['idpostagem'];
 
-   session_start();
+    $sql = "delete from comentario where idcomentario = $idcomentario AND idusuario = $idusuario AND idpostagem = $idpostagem";
 
-// Verifica se o usuário está logado
-    if (!isset($_SESSION['idusuario'])) {
-        header("Location: login.php");
-        exit();
-    }  
+    mysqli_query($conexao, $sql);
 
-    // pega o id do usuario logado
-    $usuario = $_SESSION['idusuario'];
-    
-    //pegao id do comentario
-    $comentario_id = $_GET['idcomentario'];
-    
-    if (!$comentario_id) {
-        header("location: listar_postagem.php");
-    }
+    header("Location: listar_postagem.php");
