@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `banco_rede_social`.`usuario` (
   `nome` VARCHAR(100) NULL,
   `email` VARCHAR(120) NOT NULL,
   `senha` VARCHAR(200) NOT NULL,
-  `foto` VARCHAR(200) NOT NULL,
+  `foto` VARCHAR(200) NULL,
   PRIMARY KEY (`idusuario`),
   UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE,
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)

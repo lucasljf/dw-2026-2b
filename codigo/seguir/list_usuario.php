@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <span><h2>Lista de usuario</h2></span>
+    <span><h2>Lista de Usuarios</h2></span>
 
     <table>
         <tr>
