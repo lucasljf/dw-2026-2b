@@ -46,7 +46,7 @@
             $foto_usuario = $postagem['foto'];
 
             echo "<div class='postagem'>";
-            echo "<img src='fotos_usuario/$foto_usuario'>";
+            echo "<img src='fotos_user/$foto_usuario'>";
             echo "$nome_usuario ($username)";
             echo "<br>";
             echo $idpostagem;
@@ -75,7 +75,7 @@
 
                     echo "<br>";
                     echo $idcomentario;
-                    echo "<img src='fotos_usuario/$comentario_foto_usuario'>";
+                    echo "<img src='fotos_user/$comentario_foto_usuario'>";
                     echo "$comentario_nome_usuario ($comentario_username_usuario)";
                     echo $comentario_texto;
                 }
