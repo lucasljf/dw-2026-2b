@@ -6,9 +6,11 @@
     $idusuario = $_SESSION['idusuario'];
     $texto = $_POST['texto'];
 
-    $sql = "INSERT INTO postagem (texto, idusuario) VALUES ('$texto', $idusuario)";
+    $sql = "INSERT INTO postagem (texto, idusuario) VALUES (?, ?)";
+    $comando = mysqli_prepare($conexao, $sql);
 
-    mysqli_query($conexao, $sql);
+    mysqli_stmt_bind_param($comando, "si", $texto, $idusuario);
+    mysqli_stmt_execute($comando);
 
     header("Location: principal.php");
 ?>
