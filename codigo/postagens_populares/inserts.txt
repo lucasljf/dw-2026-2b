@@ -1,0 +1,337 @@
+INSERT INTO usuario (username, nome, email, senha, foto) VALUES
+('joao123', 'João Silva', 'joao@email.com', '123456', 'joao.jpg'),
+('maria456', 'Maria Souza', 'maria@email.com', '123456', 'maria.jpg'),
+('pedro789', 'Pedro Santos', 'pedro@email.com', '123456', 'pedro.jpg'),
+('ana321', 'Ana Oliveira', 'ana@email.com', '123456', 'ana.jpg'),
+('lucas654', 'Lucas Pereira', 'lucas@email.com', '123456', 'lucas.jpg'),
+('julia987', 'Julia Costa', 'julia@email.com', '123456', 'julia.jpg'),
+('gabriel111', 'Gabriel Alves', 'gabriel@email.com', '123456', 'gabriel.jpg'),
+('beatriz222', 'Beatriz Lima', 'beatriz@email.com', '123456', 'beatriz.jpg'),
+('rafael333', 'Rafael Martins', 'rafael@email.com', '123456', 'rafael.jpg'),
+('larissa444', 'Larissa Rocha', 'larissa@email.com', '123456', 'larissa.jpg');
+
+INSERT INTO postagem (texto, data_hora, idusuario) VALUES
+('Hoje foi um dia incrível! Aprendi várias coisas novas.', '2026-10-01 08:30:00', 1),
+('Alguém mais está animado para o fim de semana?', '2026-10-01 10:15:00', 2),
+('Acabei de terminar um projeto que estava fazendo há semanas!', '2026-10-01 13:20:00', 3),
+('Nada melhor do que ouvir uma boa música depois de um dia cansativo.', '2026-10-01 18:45:00', 4),
+('Hoje consegui alcançar uma meta que tinha planejado há bastante tempo.', '2026-10-02 09:10:00', 5),
+('Qual foi a melhor coisa que aconteceu com vocês essa semana?', '2026-10-02 11:30:00', 6),
+('Estou muito feliz com os resultados do meu trabalho!', '2026-10-02 15:00:00', 7),
+('O dia está perfeito para sair com os amigos.', '2026-10-02 17:25:00', 8),
+('Começando um novo projeto e espero que dê tudo certo!', '2026-10-03 08:50:00', 9),
+('Alguém tem alguma indicação de filme para assistir hoje?', '2026-10-03 20:10:00', 10),
+
+('Hoje aprendi algo que não sabia e fiquei muito interessado.', '2026-10-04 09:00:00', 1),
+('Domingo é perfeito para descansar e colocar as coisas em ordem.', '2026-10-04 11:45:00', 2),
+('Finalmente consegui resolver aquele problema que estava me incomodando.', '2026-10-04 14:30:00', 3),
+('Vocês preferem estudar de manhã ou à noite?', '2026-10-04 16:20:00', 4),
+('Uma pequena conquista também merece ser comemorada!', '2026-10-05 08:15:00', 5),
+('Hoje foi um daqueles dias que passaram muito rápido.', '2026-10-05 12:00:00', 6),
+('Estou pensando em começar algo novo. Alguma sugestão?', '2026-10-05 15:40:00', 7),
+('Nada como terminar o dia sabendo que fizemos nosso melhor.', '2026-10-05 18:10:00', 8),
+('Quem mais gosta de conhecer lugares novos?', '2026-10-06 10:25:00', 9),
+('Que semana movimentada! Espero que os próximos dias sejam melhores.', '2026-10-06 19:30:00', 10);
+
+INSERT INTO curtida (idusuario, idpostagem) VALUES
+-- Postagem 1
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1),
+(6, 1),
+
+-- Postagem 2
+(1, 2),
+(3, 2),
+(5, 2),
+(7, 2),
+
+-- Postagem 3
+(1, 3),
+(2, 3),
+(4, 3),
+(5, 3),
+(6, 3),
+(7, 3),
+(8, 3),
+(9, 3),
+
+-- Postagem 4
+(2, 4),
+(4, 4),
+(6, 4),
+
+-- Postagem 5
+(1, 5),
+(2, 5),
+(3, 5),
+(4, 5),
+(6, 5),
+(7, 5),
+(8, 5),
+(9, 5),
+(10, 5),
+
+-- Postagem 6
+(1, 6),
+(3, 6),
+(5, 6),
+(8, 6),
+(10, 6),
+
+-- Postagem 7
+(1, 7),
+(2, 7),
+(3, 7),
+(4, 7),
+(5, 7),
+(6, 7),
+
+-- Postagem 8
+(2, 8),
+(5, 8),
+(7, 8),
+(9, 8),
+
+-- Postagem 9
+(1, 9),
+(2, 9),
+(3, 9),
+(4, 9),
+(5, 9),
+(6, 9),
+(7, 9),
+(8, 9),
+(9, 9),
+(10, 9),
+
+-- Postagem 10
+(1, 10),
+(3, 10),
+
+-- Postagem 11
+(2, 11),
+(4, 11),
+(5, 11),
+(6, 11),
+(7, 11),
+
+-- Postagem 12
+(1, 12),
+(2, 12),
+(3, 12),
+(5, 12),
+(8, 12),
+(10, 12),
+
+-- Postagem 13
+(1, 13),
+(2, 13),
+(3, 13),
+(4, 13),
+(5, 13),
+(6, 13),
+(7, 13),
+
+-- Postagem 14
+(2, 14),
+(4, 14),
+(8, 14),
+
+-- Postagem 15
+(1, 15),
+(3, 15),
+(4, 15),
+(5, 15),
+(6, 15),
+(7, 15),
+(8, 15),
+(9, 15),
+
+-- Postagem 16
+(2, 16),
+(5, 16),
+(7, 16),
+(10, 16),
+
+-- Postagem 17
+(1, 17),
+(2, 17),
+(3, 17),
+(4, 17),
+(5, 17),
+(6, 17),
+(8, 17),
+(9, 17),
+
+-- Postagem 18
+(1, 18),
+(3, 18),
+(5, 18),
+(7, 18),
+(9, 18),
+
+-- Postagem 19
+(2, 19),
+(4, 19),
+(6, 19),
+(8, 19),
+(10, 19),
+
+-- Postagem 20
+(1, 20),
+(2, 20),
+(3, 20),
+(4, 20),
+(5, 20),
+(6, 20),
+(7, 20),
+(8, 20),
+(9, 20),
+(10, 20);
+
+USE banco_rede_social;
+
+INSERT INTO comentario (idusuario, idpostagem, texto) VALUES
+-- Postagem 1
+(2, 1, 'Parabéns pela conquista!'),
+(3, 1, 'Que notícia boa!'),
+(4, 1, 'Muito legal isso!'),
+(5, 1, 'Sucesso sempre!'),
+
+-- Postagem 2
+(1, 2, 'Eu também estou animado!'),
+(3, 2, 'Já estou contando os dias.'),
+(5, 2, 'Finalmente o fim de semana!'),
+
+-- Postagem 3
+(1, 3, 'Ficou muito bom!'),
+(2, 3, 'Quanto tempo você levou?'),
+(4, 3, 'Parabéns pelo esforço!'),
+(6, 3, 'Quero ver o resultado!'),
+(8, 3, 'Muito interessante!'),
+
+-- Postagem 4
+(2, 4, 'Qual seu estilo musical favorito?'),
+(5, 4, 'Também adoro ouvir música.'),
+(7, 4, 'Música melhora qualquer dia!'),
+
+-- Postagem 5
+(1, 5, 'Você merece!'),
+(3, 5, 'Parabéns por alcançar sua meta!'),
+(4, 5, 'Que venham muitas outras conquistas!'),
+(8, 5, 'Continue assim!'),
+(10, 5, 'Muito bom!'),
+
+-- Postagem 6
+(2, 6, 'Minha semana foi muito boa.'),
+(4, 6, 'A melhor coisa foi sair com meus amigos.'),
+(7, 6, 'Foi uma semana bem produtiva!'),
+
+-- Postagem 7
+(1, 7, 'Parabéns pelo resultado!'),
+(3, 7, 'Seu esforço valeu a pena.'),
+(5, 7, 'Continue trabalhando assim!'),
+(9, 7, 'Muito sucesso para você!'),
+
+-- Postagem 8
+(1, 8, 'Concordo totalmente!'),
+(4, 8, 'Sair com os amigos é muito bom.'),
+(6, 8, 'Qual lugar vocês pretendem visitar?'),
+
+-- Postagem 9
+(2, 9, 'Boa sorte nesse projeto!'),
+(3, 9, 'Depois compartilhe os resultados.'),
+(5, 9, 'Tenho certeza de que vai dar certo!'),
+(7, 9, 'Que tipo de projeto é?'),
+(10, 9, 'Muito sucesso!'),
+
+-- Postagem 10
+(2, 10, 'Recomendo assistir a um filme de aventura.'),
+(4, 10, 'Gosto muito de filmes de comédia.'),
+
+-- Postagem 11
+(3, 11, 'Aprender coisas novas é muito bom!'),
+(5, 11, 'Qual foi o assunto?'),
+(8, 11, 'Também gosto de aprender coisas diferentes.'),
+
+-- Postagem 12
+(1, 12, 'Domingo é dia de descansar!'),
+(4, 12, 'Precisamos aproveitar o tempo livre.'),
+(6, 12, 'Concordo com você!'),
+
+-- Postagem 13
+(2, 13, 'Ainda bem que conseguiu resolver!'),
+(4, 13, 'Persistência é tudo.'),
+(7, 13, 'Isso acontece comigo também!'),
+(9, 13, 'Parabéns pela solução!'),
+
+-- Postagem 14
+(1, 14, 'Prefiro estudar de manhã.'),
+(3, 14, 'À noite consigo me concentrar melhor.'),
+(5, 14, 'Depende muito da matéria!'),
+
+-- Postagem 15
+(2, 15, 'Toda conquista merece reconhecimento.'),
+(4, 15, 'Verdade!'),
+(6, 15, 'Parabéns pela conquista!'),
+
+-- Postagem 16
+(1, 16, 'Minha semana também passou rápido.'),
+(3, 16, 'Os dias estão voando!'),
+
+-- Postagem 17
+(2, 17, 'Você poderia começar um curso novo.'),
+(5, 17, 'Aprender um idioma é uma boa ideia.'),
+(8, 17, 'Boa sorte na nova etapa!'),
+
+-- Postagem 18
+(2, 18, 'O importante é dar o nosso melhor.'),
+(4, 18, 'Exatamente!'),
+(6, 18, 'Que venha um dia ainda melhor!'),
+
+-- Postagem 19
+(1, 19, 'Eu adoro conhecer lugares novos.'),
+(3, 19, 'Qual foi o melhor lugar que você visitou?'),
+
+-- Postagem 20
+(2, 20, 'Espero que a próxima semana seja melhor!'),
+(4, 20, 'Precisamos descansar também.'),
+(6, 20, 'Boa sorte nos próximos dias!'),
+(8, 20, 'Vai dar tudo certo!');
+
+
+USE banco_rede_social;
+
+INSERT INTO comentario (idusuario, idpostagem, texto) VALUES
+-- Mais comentários na postagem 20
+(8, 20, 'Espero que venha uma semana tranquila.'),
+(10, 20, 'Um bom descanso para todo mundo!'),
+(2, 20, 'Que tudo dê certo para vocês!'),
+(5, 20, 'Precisamos aproveitar cada oportunidade!'),
+(7, 20, 'Uma nova semana, novas possibilidades!'),
+(9, 20, 'Força e foco nos próximos dias!'),
+(3, 20, 'Concordo, precisamos descansar também!'),
+
+-- Exatamente 20 novos comentários na postagem 1
+(2, 1, 'Que conquista incrível!'),
+(3, 1, 'Fico feliz por você!'),
+(4, 1, 'Continue assim!'),
+(5, 1, 'Você merece todo esse reconhecimento!'),
+(6, 1, 'Muito bom ver esse resultado!'),
+(7, 1, 'Parabéns pelo esforço!'),
+(8, 1, 'Isso é motivo para comemorar!'),
+(9, 1, 'Sucesso nas próximas etapas!'),
+(10, 1, 'Que venham mais conquistas!'),
+(1, 1, 'Muito inspirador!'),
+(3, 1, 'Adorei a novidade!'),
+(4, 1, 'É muito bom alcançar nossos objetivos.'),
+(5, 1, 'Que venham muitas outras vitórias!'),
+(6, 1, 'Parabéns pela dedicação!'),
+(7, 1, 'Você está no caminho certo!'),
+(8, 1, 'Gostei muito de saber disso!'),
+(9, 1, 'Cada esforço vale a pena!'),
+(10, 1, 'Continue compartilhando suas conquistas!'),
+(2, 1, 'Muito sucesso para você!'),
+(4, 1, 'Excelente notícia!');
