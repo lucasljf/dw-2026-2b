@@ -34,7 +34,9 @@
             FROM postagem, usuario
             WHERE postagem.idusuario = usuario.idusuario;";
 
-        $postagens = mysqli_query($conexao, $sql);
+        $comando = mysqli_prepare($conexao, $sql);
+        mysqli_stmt_execute($comando);
+        $postagens = mysqli_stmt_get_result($comando);
 
         while ($postagem = mysqli_fetch_array($postagens)) {
             $idpostagem = $postagem['idpostagem'];
@@ -58,9 +60,13 @@
             echo "<div>";
             $sql2 = "SELECT comentario.idcomentario, comentario.idusuario, comentario.texto, usuario.username, usuario.nome, usuario.foto
                 FROM comentario, usuario
-                WHERE idpostagem = $idpostagem
+                WHERE idpostagem = ?
                 AND comentario.idusuario = usuario.idusuario ORDER BY comentario.idcomentario;";
-            $comentarios = mysqli_query($conexao, $sql2);
+            $comando = mysqli_prepare($conexao, $sql2);
+            mysqli_stmt_bind_param($comando, "i", $idpostagem);
+            mysqli_stmt_execute($comando);
+            $comentarios = mysqli_stmt_get_result($comando);
+
             $quantidade_comentario = mysqli_num_rows($comentarios);
             if ($quantidade_comentario == 0) {
                 echo "Seja o primeiro a comentar...";
