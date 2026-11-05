@@ -19,9 +19,13 @@ $caminho_destino = "fotos_user/" . $novo_nome;
 
 move_uploaded_file($caminho_temporario, $caminho_destino);
 
-$sql = "INSERT INTO usuario (username, nome, email, senha, foto) VALUES ('$username', '$nome', '$email', '$nova_senha', '$novo_nome')";
+$sql = "INSERT INTO usuario (username, nome, email, senha, foto) VALUES (?, ?, ?, ?, ?)";
 
-mysqli_query($conexao, $sql);
+$comando = mysqli_prepare($conexao, $sql);
+
+mysqli_stmt_bind_param($comando, "sssss", $username, $nome, $email, $nova_senha, $novo_nome);
+
+mysqli_stmt_execute($comando);
 
 header("Location: index.php");
 ?>
