@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="form_postagem.php">Fazer nova postagem</a>
+    <a href="form_postagem.php">Fazer nova postagem</a> <br>
+    <a href="pesquisar_usuario.php">Pesquisar usuário</a>
 </body>
 </html>
