@@ -1,8 +1,0 @@
-Tarefas
----
-
-Implementar:
-
-- Tela de cadastro de usuario;
-- Tela de login;
-- Tela de postagem.
