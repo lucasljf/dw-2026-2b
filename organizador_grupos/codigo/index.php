@@ -10,7 +10,7 @@
 <body>
     <ul>
         <li><a href="form_turma.php">Cadastro de turma</a></li>
-        <li><a href="">Cadastro de alunos</a></li>
+        <li><a href="form_aluno.php">Cadastro de alunos</a></li>
         <li><a href="">Cadastro de trabalhos</a></li>
         <li><a href="">Criação de grupos</a></li>
     </ul>
